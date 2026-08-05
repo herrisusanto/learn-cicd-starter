@@ -85,9 +85,9 @@ func main() {
 		v1Router.Post("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesCreate))
 	}
 
-	v1Router.Get("/healthz", handlerReadiness)
+	v1Router.Get("/healthz",handlerReadiness)
 
-	router.Mount("/v1", v1Router)
+	router.Mount("/v1",v1Router)
 	srv := &http.Server{
 		Addr:    ":" + port,
 		Handler: router,
